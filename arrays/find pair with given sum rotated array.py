@@ -25,18 +25,9 @@ while low != high :
     currsum = arr[low]+arr[high]
     if(currsum == pair_sum):
         print("the pair is {} and {}".format(arr[low],arr[high]))
-        if (low != len(arr) - 1):
-            low += 1
-        else:
-            low = 0
+        low = (low+1)%len(arr)
     elif currsum <pair_sum:
-        if(low != len(arr)-1):
-            low+=1
-        else:
-            low = 0
+        low = (low+1)%len(arr)
     else:
-        if high != 0:
-            high -= 1
-        else:
-            high = len(arr)-1
+        high = (len(arr) + high -1)%len(arr)
 
